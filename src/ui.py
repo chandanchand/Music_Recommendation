@@ -1,6 +1,8 @@
 import streamlit as st
 from PIL import Image
 from recommend import df, recommend_songs
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent
 
 # --------------------------------------------------
 # Page Configuration
@@ -15,7 +17,7 @@ st.set_page_config(
 # --------------------------------------------------
 # Load CSS
 # --------------------------------------------------
-with open("style.css") as f:
+with open(BASE_DIR / "style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # --------------------------------------------------
@@ -48,7 +50,7 @@ and **Machine Learning**.
 # --------------------------------------------------
 # Logo
 # --------------------------------------------------
-logo = Image.open("assets/logo.png")
+logo = Image.open(BASE_DIR / "assets" / "logo.png")
 
 # --------------------------------------------------
 # Header
