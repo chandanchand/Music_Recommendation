@@ -16,15 +16,17 @@ logging.basicConfig(
 
 logging.info("Loading data...")
 
-try:
+from pathlib import Path
 
-    df = joblib.load("df_cleaned.pkl")
-    tfidf_matrix = joblib.load("tfidf_matrix.pkl")
+BASE_DIR = Path(__file__).resolve().parent
+
+try:
+    df = joblib.load(BASE_DIR / "df_cleaned.pkl")
+    tfidf_matrix = joblib.load(BASE_DIR / "tfidf_matrix.pkl")
 
     logging.info("Data loaded successfully.")
 
 except Exception as e:
-
     logging.error(str(e))
     raise e
 
