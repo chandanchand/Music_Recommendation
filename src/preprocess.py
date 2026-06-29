@@ -57,8 +57,8 @@ tfidf_matrix = tfidf.fit_transform(df['cleaned_text'])
 logging.info("✅ TF-IDF matrix shape: %s", tfidf_matrix.shape)
 
 # Cosine similarity
-logging.info("📐 Calculating cosine similarity...")
-logging.info("✅ Cosine similarity matrix generated.")
+# logging.info("📐 Calculating cosine similarity...")
+# logging.info("✅ Cosine similarity matrix generated.")
 
 # Save everything
 joblib.dump(df, 'df_cleaned.pkl')
